@@ -1,0 +1,129 @@
+:root {
+    --bg: #fff;
+    --main: rgb(255, 157, 2);
+}
+@font-face {
+    font-family: 'kaushan_scriptregular';
+    src: url('./assets/font/kaushanscript-regular-webfont.woff2') format('woff2'),
+         url('./assets/font/kaushanscript-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'norwesterregular';
+    src: url('./assets/font/norwester-webfont.woff2') format('woff2'),
+         url('./assets/font/norwester-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'ralewaylight';
+    src: url('./assets/font/raleway-light-webfont.woff2') format('woff2'),
+         url('./assets/font/raleway-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    max-width: 100%;
+}
+button {
+    appearance: none;
+    border: 0;
+    background: none;
+    outline: none;
+}
+body {
+    font-family: 'ralewaylight';
+    display: grid;
+    grid-template: minmax(3rem, 4rem) 6fr minmax(2rem, 4rem)/ 1fr;
+    grid-template-areas: "header" "content" "footer";
+    gap: 20px;
+    min-height: 100vh;
+}
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 10vw;
+    position: sticky;
+    top: 0;
+}
+.logo {
+    font-size: 2rem;
+}
+.logo, footer, nav button, h1 {
+    font-family: 'norwesterregular';
+}
+header strong {
+    color: var(--main);
+}
+nav {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+nav button {
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+nav button:hover, nav button.active {
+    background-color: var(--main);
+    color: var(--bg);
+}
+body>div {
+    grid-area: content;
+    display: flex;
+    justify-content: center;
+    padding: 0 10vw;
+}
+
+.section {
+    display: flex;
+    gap: 50px;
+}
+.greeting {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.hero {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.credit {
+    font-family: 'kaushan_scriptregular';
+    align-self: center;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--main);
+    color: var(--bg);
+    font-size: 1.5rem;
+}
+
+@media screen and (max-width: 900px) {
+    .section {
+        flex-direction: column;
+    }
+  }
